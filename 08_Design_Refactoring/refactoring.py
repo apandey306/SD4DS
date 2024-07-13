@@ -1,4 +1,4 @@
-def _weighted_mean(num_list, weights_list):
+def weighted_mean(num_list, weights_list):
     if not (num_list or weights_list):
         return None
     running_total = 0
@@ -10,7 +10,7 @@ def _weighted_mean(num_list, weights_list):
 import numpy as np
 
 
-def _weighted_mean(num_list, weights_list):
+def weighted_mean(num_list, weights_list):
     try:
         return np.average(num_list, weights=weights_list)
     except ZeroDivisionError:
