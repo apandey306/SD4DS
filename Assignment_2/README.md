@@ -1,8 +1,8 @@
-Scenario:
+### Scenario:
 You are a data scientist working for a company that specializes in analyzing and providing insights on book sales data. Your task is to create a RESTful API that allows users to retrieve information about books, including their titles, authors, publication dates, and sales data.
 
 
-Requirements:
+### Requirements:
 1. The API should have the following endpoints:
 • GET /books: Returns a list of all books in the database.
 • GET /books/{id}: Returns information about a specific book, including its title, author, publication date, and sales data.
@@ -20,7 +20,7 @@ Requirements:
 The code in this folder provides a basic structure for the API, including the endpoints, database model, and error handling. However, it is incomplete and will require additional work to implement the requirements listed above.
 
 
-Instructions:
+### Instructions:
 1. Pull the latest changes from the class Github page. The starter code for assignment 2 is available under the folder `Assignment_2`. 
 
 2. Starter code uses FastAPI to setup the different API endpoints. Consult their documentation for more details: https://devdocs.io/fastapi/
@@ -44,10 +44,10 @@ Instructions:
 9. Test the API thoroughly to ensure that it works as expected.
 
 
-Grading:
+### Grading:
 The assignment will be graded based on the following criteria:
-• Completeness and correctness of the implementation (40%)
-• Quality of the code, including organization, readability, and maintainability (30%)
-• Thoroughness and effectiveness of testing (20%)
-• Quality of the instructions and documentation (10%)
+- Completeness and correctness of the implementation (40%)
+- Quality of the code, including organization, readability, and maintainability (30%)
+- Thoroughness and effectiveness of testing (20%)
+- Quality of the instructions and documentation (10%)
 
