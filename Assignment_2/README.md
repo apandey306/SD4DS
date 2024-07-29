@@ -4,11 +4,11 @@ You are a data scientist working for a company that specializes in analyzing and
 
 ### Requirements:
 1. The API should have the following endpoints:
-• GET /books: Returns a list of all books in the database.
-• GET /books/{id}: Returns information about a specific book, including its title, author, publication date, and sales data.
-• POST /books: Creates a new book in the database.
-• PUT /books/{id}: Updates an existing book in the database.
-• DELETE /books/{id}: Deletes a book from the database.
+- GET /books: Returns a list of all books in the database.
+- GET /books/{id}: Returns information about a specific book, including its title, author, publication date, and sales data.
+- POST /books: Creates a new book in the database.
+- PUT /books/{id}: Updates an existing book in the database.
+- DELETE /books/{id}: Deletes a book from the database.
 
 2. The API uses a simple mysql database to store book data. You can use another database management system you like, but you must provide instructions on how to set it up and use it.
 
