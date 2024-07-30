@@ -37,7 +37,11 @@ The code in this folder provides a basic structure for the API, including the en
 
 ![Book API Test UI](./static/book_api_test_ui.png)
 
-7. Add a unique watermark for your results
+7. Your submission should include a zipped copy of the entire contents of `Assignment_2` folder. Also include a screenshot of the index.html page with the following book data visible in the list. Include your screenshot inside the `static` folder where the `index.html` file already lives. 
+- Title: The Great Gatsby
+- Author: F SCOTT FITZGERALD
+- Publication Date: 1925/04/10
+- Sales Data: 30 million copies sold
 
 8. Authentication/authorization mechanisms have been implemented to protect against unauthorized access. Make sure to use the dummy API key `your_api_key_here` to test your implementation. Feel free to use your own (more secure) API keys as well. 
 
@@ -46,8 +50,8 @@ The code in this folder provides a basic structure for the API, including the en
 
 ### Grading:
 The assignment will be graded based on the following criteria:
-- Completeness and correctness of the implementation (40%)
-- Quality of the code, including organization, readability, and maintainability (30%)
+- Completeness and correctness of the implementation (50%)
+- Quality of the code, including organization, readability, and maintainability (20%)
 - Thoroughness and effectiveness of testing (20%)
 - Quality of the instructions and documentation (10%)
 
