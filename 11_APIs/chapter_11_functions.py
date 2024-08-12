@@ -1,5 +1,6 @@
 import pandas as pd
 from scipy.stats import linregress
+import numpy as np
 
 
 def fit_trendline(year_timestamps, data):
@@ -59,5 +60,9 @@ def country_trendline(country_name):
     )
     timestamps = [int(i) for i in df.index.tolist()]
     country_data = df[country_name].tolist()
+
+    # Replace NaN and infinite values with a default value (e.g., 0)
+    # country_data = [0 if (pd.isnull(i) or np.isinf(i)) else i for i in country_data]
+
     slope, r_squared = fit_trendline(timestamps, country_data)
     return slope, r_squared

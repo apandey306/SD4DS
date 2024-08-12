@@ -1,4 +1,4 @@
-def _weighted_mean(num_list, weights_list):
+def weighted_mean(num_list, weights_list):
     if not (num_list or weights_list):
         return None
     running_total = 0

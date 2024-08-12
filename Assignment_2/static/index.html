@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book API Test UI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+       .container {
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+       .form {
+            margin-bottom: 20px;
+        }
+       .form input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+       .form input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+       .form input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+       .results {
+            margin-top: 20px;
+        }
+       .results ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+       .results li {
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+       .results li:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Book API Test UI</h1>
+        <form class="form" id="book-form">
+            <input type="text" id="title" placeholder="Title">
+            <input type="text" id="author" placeholder="Author">
+            <input type="text" id="publication-date" placeholder="Publication Date">
+            <input type="text" id="sales-data" placeholder="Sales Data">
+            <input type="submit" value="Create Book">
+        </form>
+        <div class="results">
+            <h2>Books</h2>
+            <ul id="book-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        const bookForm = document.getElementById('book-form');
+        const bookList = document.getElementById('book-list');
+
+        bookForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const title = document.getElementById('title').value;
+            const author = document.getElementById('author').value;
+            const publicationDate = document.getElementById('publication-date').value;
+            const salesData = document.getElementById('sales-data').value;
+
+            const response = await fetch('/books', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    title,
+                    author,
+                    publication_date: publicationDate,
+                    sales_data: salesData
+                })
+            });
+
+            const book = await response.json();
+            const bookListItem = document.createElement('li');
+            bookListItem.textContent = `${book.title} by ${book.author} (${book.publication_date}) - ${book.sales_data}`;
+            bookList.appendChild(bookListItem);
+
+            document.getElementById('title').value = '';
+            document.getElementById('author').value = '';
+            document.getElementById('publication-date').value = '';
+            document.getElementById('sales-data').value = '';
+        });
+
+        async function getBooks() {
+            const response = await fetch('/books');
+            const books = await response.json();
+
+            books.forEach((book) => {
+                const bookListItem = document.createElement('li');
+                bookListItem.textContent = `${book.title} by ${book.author} (${book.publication_date}) - ${book.sales_data}`;
+                bookList.appendChild(bookListItem);
+            });
+        }
+
+        getBooks();
+    </script>
+</body>
+</html>
