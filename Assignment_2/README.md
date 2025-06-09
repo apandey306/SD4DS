@@ -33,7 +33,7 @@ The code in this folder provides a basic structure for the API, including the en
 
 5. Complete implementation of the GET, POST, PUT and DELETE methods in `main.py` file. 
 
-6. Fix the UI (in index.html) so you can get the results and the UI looks like this when it loads. You need to add authorization heads in both the GET and POST calls in the index.html file to make this possible. You can access the test UI for the app here: http://127.0.0.1:8000/static/index.html
+6. Fix the UI (in index.html) so you can get the results and the UI looks like this when it loads. You need to add authorization headers in both the GET and POST calls in the index.html file to make this possible. You can access the test UI for the app here: http://127.0.0.1:8000/static/index.html
 
 ![Book API Test UI](./static/book_api_test_ui.png)
 
